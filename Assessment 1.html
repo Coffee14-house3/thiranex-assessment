@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Prathikaa.d.gupta | Accessible Portfolio</title>
+
+<meta name="description" content="Professional portfolio of John Doe, web developer specializing in accessible and responsive websites.">
+<meta name="keywords" content="portfolio, web developer, accessibility, HTML5, CSS3, JavaScript">
+<meta name="author" content="John Doe">
+<meta name="robots" content="index,follow">
+
+<meta property="og:title" content="John Doe Portfolio">
+<meta property="og:description" content="Accessible and responsive web developer portfolio.">
+<meta property="og:type" content="website">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    line-height:1.7;
+    background:#f4f6f8;
+    color:#222;
+}
+
+/* Skip Link */
+.skip-link{
+    position:absolute;
+    left:-9999px;
+    top:auto;
+}
+
+.skip-link:focus{
+    left:10px;
+    top:10px;
+    background:#000;
+    color:#fff;
+    padding:10px;
+    z-index:999;
+}
+
+/* Header */
+header{
+    background:#1f2937;
+    color:white;
+    padding:20px;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+nav a:hover{
+    text-decoration:underline;
+}
+
+/* Hero */
+.hero{
+    text-align:center;
+    padding:80px 20px;
+    background:white;
+}
+
+.hero h1{
+    font-size:3rem;
+    margin-bottom:15px;
+}
+
+.hero p{
+    font-size:1.2rem;
+}
+
+/* Main */
+main{
+    max-width:1100px;
+    margin:auto;
+    padding:30px;
+}
+
+section{
+    margin-bottom:60px;
+}
+
+section h2{
+    margin-bottom:20px;
+    color:#1f2937;
+}
+
+/* About */
+.about{
+    background:white;
+    padding:25px;
+    border-radius:10px;
+}
+
+/* Skills */
+.skills ul{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:15px;
+    list-style:none;
+}
+
+.skills li{
+    background:white;
+    padding:15px;
+    text-align:center;
+    border-radius:8px;
+}
+
+/* Projects */
+.project-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+}
+
+.project-card{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+}
+
+.project-card h3{
+    margin-bottom:10px;
+}
+
+/* Contact Form */
+.contact-form{
+    background:white;
+    padding:25px;
+    border-radius:10px;
+}
+
+.form-group{
+    margin-bottom:20px;
+}
+
+label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:bold;
+}
+
+input,
+textarea{
+    width:100%;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:6px;
+}
+
+button{
+    background:#1f2937;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    cursor:pointer;
+    border-radius:6px;
+}
+
+button:hover{
+    opacity:0.9;
+}
+
+/* Accessibility Focus */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus{
+    outline:3px solid #2563eb;
+    outline-offset:3px;
+}
+
+/* Footer */
+footer{
+    background:#1f2937;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+@media(max-width:768px){
+    .hero h1{
+        font-size:2rem;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<a href="#main-content" class="skip-link">Skip to Main Content</a>
+
+<header role="banner">
+    <nav aria-label="Main Navigation">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main id="main-content">
+
+    <!-- Hero Section -->
+    <section id="home" class="hero" aria-labelledby="hero-heading">
+        <h1 id="hero-heading">Prathikaa D gupta </h1>
+        <p>Web Developer | UI Designer | Accessibility Advocate</p>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="about" aria-labelledby="about-heading">
+        <h2 id="about-heading">About Me</h2>
+        <article>
+            <p>
+                I am a passionate web developer who creates modern,
+                responsive, and accessible websites using HTML5,
+                CSS3, JavaScript, and best UX practices.
+            </p>
+        </article>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="skills" aria-labelledby="skills-heading">
+        <h2 id="skills-heading">Skills</h2>
+
+        <ul>
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>JavaScript</li>
+            <li>Responsive Design</li>
+            <li>SEO Optimization</li>
+            <li>Accessibility (WCAG)</li>
+        </ul>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" aria-labelledby="projects-heading">
+        <h2 id="projects-heading">Projects</h2>
+
+        <div class="project-grid">
+
+            <article class="project-card">
+                <h3>Portfolio Website</h3>
+                <p>
+                    Responsive portfolio built with semantic HTML5 and CSS.
+                </p>
+            </article>
+
+            <article class="project-card">
+                <h3>Task Manager</h3>
+                <p>
+                    Productivity application with accessibility-first design.
+                </p>
+            </article>
+
+            <article class="project-card">
+                <h3>E-Commerce UI</h3>
+                <p>
+                    Modern online shopping interface optimized for usability.
+                </p>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" aria-labelledby="contact-heading">
+
+        <h2 id="contact-heading">Contact Me</h2>
+
+        <form class="contact-form"
+              action="#"
+              method="post"
+              aria-label="Contact Form">
+
+            <fieldset>
+                <legend>Send a Message</legend>
+
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        required
+                        autocomplete="name">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        required
+                        autocomplete="email">
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input
+                        type="text"
+                        id="subject"
+                        name="subject"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea
+                        id="message"
+                        name="message"
+                        rows="6"
+                        required></textarea>
+                </div>
+
+                <button type="submit">
+                    Send Message
+                </button>
+
+            </fieldset>
+
+        </form>
+
+    </section>
+
+</main>
+
+<footer>
+    <p>&copy; 2026 Prathikaa.d.gupta. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
